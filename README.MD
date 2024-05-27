@@ -50,7 +50,7 @@ Create your nodejs express app
    Create a `.env` file in the `server` directory with the following variables:
 
    ```
-   PORT=5000
+   PORT=8000
    MONGODB_URI=your-mongodb-uri
    ```
 
@@ -88,7 +88,3 @@ Create your nodejs express app
 - **Add Employee:** Click on the "Add New Employee" button to add a new employee.
 - **Edit Employee:** Click on the "Edit" link next to an employee to edit their details.
 - **Delete Employee:** Click on the "Delete" button next to an employee to delete them.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
