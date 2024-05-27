@@ -1,0 +1,33 @@
+/* App.css */
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.nav {
+  margin-bottom: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 20px;
+  margin-right: 20px;
+  transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.nav a:hover {
+  color: #0056b3; /* Darker shade of blue on hover */
+}
