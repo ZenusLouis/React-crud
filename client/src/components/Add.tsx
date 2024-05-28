@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { toast } from "react-toastify";
 import "./styles/add.css";
-import axios from "../api"; // Import Axios
+import axios from "../api";
 
 const Add: React.FC = () => {
   const [employee, setEmployee] = useState({
