@@ -51,11 +51,15 @@ Create your nodejs express app
 
    ```
    PORT=8000
-   MONGODB_URI=your-mongodb-uri
+   MONGODB_URI=your-mongodb-url
    ```
+ Create a `.env` file in the `client` directory with the following variables:
 
-   Replace `your-mongodb-uri` with the connection string for your MongoDB database.
-
+   ```
+   VITE_API_BASE_URL=http://your_domain:8000/
+   ```
+   Replace `your_domain` with domain, if you run as local, you will set it is localhost.
+   **NOTE: make sure you set the same port with the server directory, if not, you might encounter errors such as Axios returning "Network Error" with the name "AxiosError" and code "ERR_NETWORK". This occurs when    the frontend application fails to establish a network connection with the backend server, typically due to incorrect URL configuration or server unavailability.
 2. **Configure package.json:**
 
    Update the `package.json` file in the `server` directory to include a script for running the server:
