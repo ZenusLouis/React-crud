@@ -61,7 +61,7 @@ Create your nodejs express app
    Replace `your_domain` with domain, if you run as local, you will set it is localhost.
 ### Important Note for API Configuration
 
-When configuring the API base URL in your environment variables, I suggest you set in client directory port is 8000. Incorrect configuration may lead to errors, such as Axios returning "Network Error" with the name "AxiosError" and code "ERR_NETWORK". This typically occurs when the frontend application fails to establish a network connection with the backend server due to incorrect URL configuration or server unavailability.
+When configuring the API base URL in your environment variables, ensure that the URL points to the correct port where your backend server is running. For example, if your backend server is running on port 5000, the VITE_API_URL in your client directory should be set to http://localhost:5000. Incorrect configuration can lead to errors, such as Axios returning a "Network Error" with the name "AxiosError" and code "ERR_NETWORK". This typically occurs when the frontend application fails to establish a network connection with the backend server due to incorrect URL configuration or server unavailability.
 
 2. **Configure package.json:**
 
