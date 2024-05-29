@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from '../api';
 import './styles/delete.css';
 
-const Delete: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
-  const [employee, setEmployee] = useState<{ name: string; position: string; department: string } | null>(null);
-  const [error, setError] = useState<string>('');
-  const [message, setMessage] = useState<string>('');
-  const [isDeleted, setIsDeleted] = useState<boolean>(false);
+const Delete = () => {
+  const { id } = useParams();
+  const [employee, setEmployee] = useState(null);
+  const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
+  const [isDeleted, setIsDeleted] = useState(false);
 
   useEffect(() => {
     const fetchEmployee = async () => {
@@ -31,7 +30,7 @@ const Delete: React.FC = () => {
       setIsDeleted(true);
       setMessage('Employee deleted successfully.');
       setTimeout(() => {
-        navigate('/'); // Navigate to the home page after 1 second
+        window.location.href = '/'; // Navigate to the home page after 1 second
       }, 1000);
     } catch (error) {
       console.error('Error deleting employee:', error);
@@ -42,10 +41,10 @@ const Delete: React.FC = () => {
   if (error) {
     return <div className="notification error">{error}</div>;
   }
-
   if (!employee && !isDeleted) {
     return <div>Loading...</div>;
   }
+
 
   return (
     <div className="delete-container">

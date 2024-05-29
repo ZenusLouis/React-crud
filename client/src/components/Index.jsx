@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "../api";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./styles/index.css";
 
-interface Employee {
-  _id: string;
-  name: string;
-  position: string;
-  department: string;
-}
-
-const Index: React.FC = () => {
-  const [employees, setEmployees] = useState<Employee[]>([]);
+const Index = () => {
+  const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get<Employee[]>("/employees");
+        const response = await axios.get("/employees");
         setEmployees(response.data);
       } catch (error) {
         console.error("Error fetching employees:", error);
@@ -55,12 +48,12 @@ const Index: React.FC = () => {
                 </button>
                 {" | "}
                 <button>
-                <Link
-                  to={`/delete/${employee._id}`}
-                  style={{ color: "#000", textDecoration: "none" }}
-                >
-                  Delete
-                </Link>
+                  <Link
+                    to={`/delete/${employee._id}`}
+                    style={{ color: "#000", textDecoration: "none" }}
+                  >
+                    Delete
+                  </Link>
                 </button>
               </td>
             </tr>

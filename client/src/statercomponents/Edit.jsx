@@ -21,7 +21,7 @@ const Edit = () => {
       <h2>Edit Employee</h2>
       {/* TODO: Display notification if it exists */}
       <form onSubmit={handleSubmit}>
-        <input
+      <input
           type="text"
           placeholder="Name"
           value={name}

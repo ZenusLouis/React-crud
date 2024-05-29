@@ -27,7 +27,7 @@ const Edit = () => {
     fetchEmployee();
   }, [id]);
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.post(`/employees/update/${id}`, { name, position, department });
@@ -35,7 +35,7 @@ const Edit = () => {
       setTimeout(() => {
         setNotification('');
         window.location.href = '/'; // Redirect to home page
-      }, 1000); // Clear notification after 1 seconds
+      }, 1000); // Clear notification after 1 second
     } catch (error) {
       console.error('Error updating employee');
       setNotification('Error updating employee.');
@@ -72,11 +72,9 @@ const Edit = () => {
           Update Employee
         </button>
         {" | "}
-        <button type="submit" className="edit-button">
-          <Link to="/" style={{ color: "#ffffff", textDecoration: "none"}}>
-            Cancel
-          </Link>
-        </button>
+        <Link to="/" className="edit-button" style={{ color: "#ffffff", textDecoration: "none"}}>
+          Cancel
+        </Link>
       </form>
     </div>
   );

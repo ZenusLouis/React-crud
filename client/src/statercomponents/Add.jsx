@@ -1,17 +1,17 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "../api"; // Import Axios
 import "./styles/add.css";
 
-const Add: React.FC = () => {
+const Add = () => {
   // State for employee data
   const [employee, setEmployee] = useState({});
 
   // Function to handle input changes
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {};
+  const handleChange = (e) => {};
 
   // Function to handle form submission
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       // TODO: Send a POST request to add employee
@@ -32,7 +32,7 @@ const Add: React.FC = () => {
         type="text"
         placeholder="Name"
         name="name"
-        value={employee.name}//name is columns of table Employee in the collection
+        value={employee.name} //name is columns of table Employee in the collection
         onChange={handleChange}
       />
       {/* Type more input fields for employee data here*/}

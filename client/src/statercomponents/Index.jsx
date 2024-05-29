@@ -5,7 +5,7 @@ import "./styles/index.css";
 
 // TODO: Define the Employee interface
 
-const Index: React.FC = () => {
+const Index = () => {
   // TODO: Define the employees state using useState hook
 
   useEffect(() => {

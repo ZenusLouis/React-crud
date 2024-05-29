@@ -1,16 +1,16 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 import "./styles/add.css";
 import axios from "../api";
 
-const Add: React.FC = () => {
+const Add = () => {
   const [employee, setEmployee] = useState({
     name: "",
     position: "",
     department: "",
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setEmployee((prevState) => ({
       ...prevState,
@@ -18,7 +18,7 @@ const Add: React.FC = () => {
     }));
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.post("/employees/add", employee); // Send POST request to add employee

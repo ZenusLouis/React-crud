@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from '../api';
 import './styles/delete.css';
 
 // TODO: Define the Employee interface
 
-const Delete: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
+const Delete = () => {
+  const { id } = useParams();
   
   // TODO: Define state variables: employee, error, message, isDeleted
 
@@ -20,6 +19,12 @@ const Delete: React.FC = () => {
   };
 
   // TODO: Render loading message, error message, or delete confirmation
+  if (error) {
+  }
+
+  if (!employee && !isDeleted) {
+  }  
+
 
   return (
     <div className="delete-container">
